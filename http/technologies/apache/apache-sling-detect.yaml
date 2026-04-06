@@ -1,7 +1,7 @@
 id: apache-sling-detect
 
 info:
-  name: Apache Sling - Detection
+  name: Apache Sling - Detect
   author: icarot
   severity: info
   description: |
@@ -14,10 +14,12 @@ info:
     product: sling
     shodan-query: title:"Apache Sling"
   tags: apache,sling,detect
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/starter.html"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -25,6 +27,7 @@ http:
           - 'Apache Sling'
           - 'sling.apache'
         condition: and
+    
       - type: status
         status:
           - 200
