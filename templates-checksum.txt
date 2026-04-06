@@ -6037,6 +6037,7 @@ http/default-logins/feiyuxing/feiyuxing-default-login.yaml:07a9384434386b2f87dcb
 http/default-logins/filegator/filegator-default-login.yaml:65111cbaf809a433915deeea10a274d3cc72bb0a
 http/default-logins/flir/flir-default-login.yaml:e25a35392b4109cb254b6970b49827b0931b95cf
 http/default-logins/franklin-fueling-default-login.yaml:d6923bd18126d6bba2ef62f67a50b26ee9ef6d75
+http/default-logins/freepbx-default-login.yaml:3cc45d9c6d23281cf2d67ddd12e680dcdc79bb04
 http/default-logins/frps/frp-default-login.yaml:f0b105b8028493a546df4bdd78c6a2383fd2c50a
 http/default-logins/fuelcms/fuelcms-default-login.yaml:54d7d00886836cbb5b600591787d61aea43030c5
 http/default-logins/fuji-xerox/fuji-xerox-default-login.yaml:410b2d1151af60cae940087e24c787b027d3a3a2
@@ -12988,7 +12989,7 @@ ssl/tls-version.yaml:396e167fe4dc47cc31a3823287f767ac4ba3ed6d
 ssl/untrusted-root-certificate.yaml:bc78917f6ed97df44ec66fd168e6d3d51f2050a9
 ssl/weak-cipher-suites.yaml:a2c5b71896965bcbb458e1d2a5bcf54981301156
 ssl/wildcard-tls.yaml:93487bb9d9c28bf84ae1928887b0dafef67b4117
-templates-checksum.txt:495a2d1e9f7609940dd80d1d8baf143c56731c9d
+templates-checksum.txt:155bcf46e17bf9439e796a8deaac6890e2bdd2b5
 workflows/74cms-workflow.yaml:bb010e767ad32b906153e36ea618be545b4e22d0
 workflows/acrolinx-workflow.yaml:8434089bb55dec3d7b2ebc6a6f340e73382dd0c4
 workflows/activemq-workflow.yaml:20eb2f6dea0ca25d1bd556b5a63e5f25686f2376
