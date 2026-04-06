@@ -15,6 +15,7 @@ http/cves/2026/CVE-2026-34453.yaml
 http/cves/2026/CVE-2026-34605.yaml
 http/cves/2026/CVE-2026-4020.yaml
 http/cves/2026/CVE-2026-4257.yaml
+http/cves/2026/CVE-2026-5615.yaml
 http/default-logins/freepbx-default-login.yaml
 http/default-logins/graylog/graylog-default-login.yaml
 http/default-logins/grocy/grocy-default-login.yaml
