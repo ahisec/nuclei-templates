@@ -63,3 +63,4 @@ http:
           - 'contains(body, "FreePBX Administration")'
           - '!contains(body, "loginform")'
         condition: and
+# digest: 4b0a004830460221009e7906210597eadd48c55146c313990153fb4492a6d426aca6c4d74fafe90178022100b59bc9c4e33b1001afdcf54b698b758ca00ef311e266a7044936ed3fdb158508:922c64590222798bb761d5b6d8e72950
