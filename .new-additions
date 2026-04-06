@@ -25,6 +25,7 @@ http/default-logins/owncast-default-login.yaml
 http/misconfiguration/heimdall-dashboard-exposure.yaml
 http/misconfiguration/installer/3cx-installer.yaml
 http/misconfiguration/installer/icinga-installer.yaml
+http/misconfiguration/installer/modx-installer.yaml
 http/misconfiguration/installer/revive-adserver-installer.yaml
 http/misconfiguration/photoprism-unauth-exposure.yaml
 http/misconfiguration/piwik/piwik-unauthenticated-access.yaml
