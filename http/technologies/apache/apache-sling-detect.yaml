@@ -27,7 +27,7 @@ http:
           - 'Apache Sling'
           - 'sling.apache'
         condition: and
-    
+
       - type: status
         status:
           - 200
