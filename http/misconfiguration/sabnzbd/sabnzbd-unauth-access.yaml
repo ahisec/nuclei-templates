@@ -30,3 +30,4 @@ http:
           - 'contains_all(body, "var sabSession =", "configTranslate", "SABnzbd Config")'
           - 'contains(content_type, "text/html")'
         condition: and
+# digest: 4a0a004730450220468613bb79b5633b1acac526b62e91483a25d5c543ee7d589544b9e68306000b022100f1c9c24379d9d0296f1fef17c13c36e0727c08cb76afafed694e8cbd165cc3a8:922c64590222798bb761d5b6d8e72950
