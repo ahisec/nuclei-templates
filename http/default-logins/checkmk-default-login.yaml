@@ -80,3 +80,4 @@ http:
           - 'status_code == 302'
           - 'contains_all(to_lower(header), "set-cookie", "auth_", "index.py")'
         condition: and
+# digest: 4b0a00483046022100a2c49b655c1cc95b9b5c84a8ebbc5c1c940dbc70737b697e6ae75755847c22eb022100866fa290d6fe4820b6f0fdbb01bff3b7fb59c6e4b501e391ee9b3175b7bd42f2:922c64590222798bb761d5b6d8e72950
