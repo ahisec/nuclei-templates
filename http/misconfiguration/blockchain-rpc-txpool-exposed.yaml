@@ -2,7 +2,7 @@ id: blockchain-rpc-txpool-exposed
 
 info:
   name: Blockchain RPC - txpool_content Exposed
-  author: PentesterTN
+  author: 0xBassia
   severity: high
   description: |
     The blockchain RPC endpoint exposes the txpool_content method, which returns all pending (unmined) transactions in the mempool including sender addresses, transaction data, gas prices, and values. This enables frontrunning attacks, sandwich attacks, and other MEV (Maximal Extractable Value) exploitation against users.

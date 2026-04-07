@@ -2,7 +2,7 @@ id: checkmk-default-login
 
 info:
   name: Checkmk - Default Login
-  author: PentesterTN
+  author: 0xBassia
   severity: high
   description: |
     Checkmk monitoring instance is accessible with default credentials (cmkadmin/cmkadmin). This provides full administrative access to the monitoring platform, including the ability to view all monitored hosts, execute commands on agents, and access stored credentials.
