@@ -35,6 +35,7 @@ http/default-logins/mirth/mirth-connect-default-login.yaml
 http/default-logins/netbox/netbox-default-login.yaml
 http/default-logins/owncast-default-login.yaml
 http/default-logins/superset-default-login.yaml
+http/exposed-panels/openclaw-control-detect.yaml
 http/misconfiguration/argo-workflows-unauth.yaml
 http/misconfiguration/blockchain-rpc-debug-exposure.yaml
 http/misconfiguration/blockchain-rpc-txpool-exposed.yaml
