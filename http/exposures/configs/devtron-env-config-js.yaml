@@ -1,0 +1,33 @@
+id: devtron-env-config-js
+
+info:
+  name: Devtron JavaScript Environment Configuration - Detect
+  author: johnk3r
+  severity: low
+  description: Devtron JavaScript environment configuration files were detected.
+  metadata:
+    max-request: 8
+  tags: javascript,config,exposure,vuln,devtron
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/dashboard/env-config.js"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - "contains(tolower(content_type), 'application/javascript')"
+
+      - type: word
+        part: body
+        words:
+          - "CENTRAL_API_ENDPOINT"
+          - "GATEKEEPER_URL"
+          - "DEVTRON_APP_DETAILS_POLLING_INTERVAL"
+        condition: and
