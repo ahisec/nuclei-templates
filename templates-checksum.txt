@@ -12219,6 +12219,7 @@ http/vulnerabilities/other/zcms-v3-sqli.yaml:0022a59156f1f17ae99b0eee022f01b1647
 http/vulnerabilities/other/zhixiang-oa-msglog-sqli.yaml:84a038d1869bd9760e7022f304c87525bf8b01cc
 http/vulnerabilities/other/zimbra-preauth-ssrf.yaml:c7b7df4f52fa6c65445516db73e1be0db5cd0714
 http/vulnerabilities/other/zms-auth-bypass.yaml:1138f5be0e57fea9fd68f92c2287de1e544f254f
+http/vulnerabilities/other/zqnb-educationcloud-exposure.yaml:6e4c031d678d8b059306b822cfbdd6cb1a8e2b56
 http/vulnerabilities/other/zzcms-register-xss.yaml:0ec6fa104b37da349c4b0fcdbd92878170ea368c
 http/vulnerabilities/other/zzcms-xss.yaml:0a11465e17bcfe1dda0c5fbc98a970c8b635e1a7
 http/vulnerabilities/phoenix-contact/phoenix-contact-charx-multiple-vulnerabilities.yaml:0b7704cb10d11fa7e781c4430f797236adf9c1cc
@@ -13034,7 +13035,7 @@ ssl/tls-version.yaml:396e167fe4dc47cc31a3823287f767ac4ba3ed6d
 ssl/untrusted-root-certificate.yaml:bc78917f6ed97df44ec66fd168e6d3d51f2050a9
 ssl/weak-cipher-suites.yaml:a2c5b71896965bcbb458e1d2a5bcf54981301156
 ssl/wildcard-tls.yaml:93487bb9d9c28bf84ae1928887b0dafef67b4117
-templates-checksum.txt:defbf2fd3ea1e5a34e5914779faf0c19b558178f
+templates-checksum.txt:021fda8a70b69b5cb4300e50d1af114be3796608
 workflows/74cms-workflow.yaml:bb010e767ad32b906153e36ea618be545b4e22d0
 workflows/acrolinx-workflow.yaml:8434089bb55dec3d7b2ebc6a6f340e73382dd0c4
 workflows/activemq-workflow.yaml:20eb2f6dea0ca25d1bd556b5a63e5f25686f2376
