@@ -58,3 +58,4 @@ http/misconfiguration/sabnzbd/sabnzbd-unauth-access.yaml
 http/misconfiguration/weak-hsts-detect.yaml
 http/technologies/apache/apache-sling-detect.yaml
 http/vulnerabilities/magento/magento-polyshell-rce.yaml
+javascript/cves/2026/CVE-2026-39987.yaml
