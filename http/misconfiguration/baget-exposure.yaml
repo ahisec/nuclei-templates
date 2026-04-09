@@ -1,0 +1,35 @@
+id: baget-exposure
+
+info:
+  name: BaGet - Exposure
+  author: DhiyaneshDk
+  severity: medium
+  description: |
+    BaGet Package Manager is being exposed.
+  reference:
+    - https://loic-sharma.github.io/BaGet/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"BaGet"
+  tags: misconfig,glitchtip
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'content="BaGet"'
+          - 'BaGet.Web'
+        condition: or
+
+      - type: status
+        status:
+          - 200
