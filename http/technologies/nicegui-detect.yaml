@@ -1,0 +1,32 @@
+id: nicegui-detect
+
+info:
+  name: NiceGUI Detection
+  author: theamanrawat
+  severity: info
+  description: |
+    An instance running NiceGUI is detected by looking for specific HTTP headers.
+  metadata:
+    max-request: 8
+    shodan-query: "x-nicegui-content"
+  tags: nicegui,detect,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "x-nicegui-content"
+        case-insensitive: true
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '/_nicegui/([0-9.]+)/'
