@@ -1,0 +1,32 @@
+id: devtron-panel
+
+info:
+  name: Devtron Panel Login Panel - Detect
+  author: johnk3r
+  severity: info
+  description: Devtron Panel login panel was detected.
+  reference:
+    - https://devtron.ai/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Devtron"
+  tags: panel,devtron,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/dashboard/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Devtron</title>"
+
+      - type: status
+        status:
+          - 200
