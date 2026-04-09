@@ -4,7 +4,8 @@ info:
   name: Apache ActiveMQ Artemis Console Default Login
   author: pdteam
   severity: high
-  description: Apache ActiveMQ Artemis console default login credentials were discovered.
+  description: |
+   Detected Apache ActiveMQ Artemis console default login credentials were discovered.
   reference:
     - https://activemq.apache.org/components/artemis/documentation/latest/management-console.html
   metadata:
@@ -31,23 +32,25 @@ http:
       password:
         - artemis
     attack: pitchfork
+
     matchers-condition: and
     matchers:
-      - type: word
-        part: header
-        words:
-          - 'application/json'
+      - type: dsl
+        dsl:
+          - 'contains(content_type, "application/json")'
 
       - type: word
         part: body
         words:
           - '{"credentials"'
-          - '"username":"artemis"'
+          - '"principals":['
+          - 'org.apache.activemq'
         condition: and
 
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         name: credential
