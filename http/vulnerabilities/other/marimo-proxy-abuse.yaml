@@ -39,7 +39,7 @@ http:
           - 'Connection refused"}'
           - 'detail":'
         condition: and
-      
+
       - type: word
         part: content_type
         words:
