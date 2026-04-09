@@ -48,6 +48,7 @@ http/default-logins/owncast-default-login.yaml
 http/default-logins/superset-default-login.yaml
 http/exposed-panels/openclaw-control-detect.yaml
 http/misconfiguration/argo-workflows-unauth.yaml
+http/misconfiguration/baget-exposure.yaml
 http/misconfiguration/blockchain-rpc-debug-exposure.yaml
 http/misconfiguration/blockchain-rpc-txpool-exposed.yaml
 http/misconfiguration/glitchtip/glitchtip-public-signup.yaml
