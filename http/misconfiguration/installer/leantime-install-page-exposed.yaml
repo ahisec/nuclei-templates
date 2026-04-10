@@ -30,3 +30,4 @@ http:
           - 'contains(content_type, "text/html")'
           - 'status_code == 200'
         condition: and
+# digest: 4a0a00473045022014480baafee16dc7853cecccce4dd40dee23648a9434d6a3bdba7875bad27134022100a0b71a1b7667ae7e6bc4eca35e07f1bbdb315c784be2b7ee156f65906b3170f1:922c64590222798bb761d5b6d8e72950
