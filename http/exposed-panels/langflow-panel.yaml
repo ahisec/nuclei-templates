@@ -1,0 +1,37 @@
+id: langflow-panel
+
+info:
+  name: Langflow Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Detects the Langflow web interface.
+  reference:
+    - https://github.com/langflow-ai/langflow
+    - https://www.langflow.org/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: langflow-ai
+    product: langflow
+    shodan-query: http.title:"Langflow"
+  tags: panel,langflow,detect,discovery,ai,llm
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Langflow"
+
+      - type: status
+        status:
+          - 200
