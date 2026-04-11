@@ -1,0 +1,30 @@
+id: superagi-panel
+
+info:
+  name: SuperAGI Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    SuperAGI panel was detected. SuperAGI is an open-source autonomous AI agent platform
+    that enables building, managing, and running AI agents. Exposed instances may allow
+    unauthorized access to agent configurations and execution environments.
+  reference:
+    - https://github.com/TransformerOptimus/SuperAGI
+    - https://superagi.com/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: TransformerOptimus
+    product: superagi
+    shodan-query: 'http.favicon.hash:-2056571568'
+  tags: panel,superagi,ai,agent,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/favicon.ico"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200 && \"-2056571568\" == mmh3(base64_py(body))"

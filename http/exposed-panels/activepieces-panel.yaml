@@ -1,0 +1,39 @@
+id: activepieces-panel
+
+info:
+  name: Activepieces Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Activepieces was detected. Activepieces is an open-source automation platform
+    with AI and LLM integrations. Exposed instances may allow access to workflow
+    automation configurations and connected integrations.
+  reference:
+    - https://github.com/activepieces/activepieces
+    - https://www.activepieces.com/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: Activepieces
+    product: activepieces
+    shodan-query: 'http.title:"Activepieces"'
+  tags: panel,activepieces,automation,ai,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Activepieces</title>"
+
+      - type: status
+        status:
+          - 200
