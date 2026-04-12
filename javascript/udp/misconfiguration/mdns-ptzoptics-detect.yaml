@@ -21,11 +21,9 @@ javascript:
     code: |
       let c = require("nuclei/net");
       let conn = c.Open('udp', `${Host}:${Port}`);
-      
       // Query for _services._dns-sd._udp.local PTR records
       // This queries for all advertised mDNS services
       let packet = "e3bc01200001000000000001095f7365727669636573075f646e732d7364045f756470056c6f63616c00000c000100002904d000000000000c000a00083e6e072b14fd0be3";
-      
       conn.SendHex(packet);
       let resp = conn.Recv(512);
       resp;
