@@ -1,0 +1,45 @@
+id: marqo-detect
+
+info:
+  name: Marqo Vector Search Engine - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Marqo vector search engine was detected. Marqo is an open-source tensor
+    search and vector database that combines vector search with filtering and
+    text/image search for AI applications. Exposed instances allow unauthenticated
+    access to search indices, stored documents, and vector embeddings.
+  reference:
+    - https://github.com/marqo-ai/marqo
+    - https://www.marqo.ai/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: marqo-ai
+    product: marqo
+    shodan-query: 'http.html:"Welcome to Marqo"'
+  tags: tech,marqo,vector-db,search,ai,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Welcome to Marqo"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - '"version":"([^"]+)"'

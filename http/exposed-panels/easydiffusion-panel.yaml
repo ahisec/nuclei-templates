@@ -1,0 +1,40 @@
+id: easydiffusion-panel
+
+info:
+  name: Easy Diffusion Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Easy Diffusion (formerly Stable Diffusion UI) was detected. Easy Diffusion is
+    a one-click, self-hosted Stable Diffusion web application focused on
+    accessibility and ease of use for AI image generation. Exposed instances allow
+    unauthenticated access to image generation capabilities and stored outputs.
+  reference:
+    - https://github.com/easydiffusion/easydiffusion
+    - https://easydiffusion.github.io/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: easydiffusion
+    product: easydiffusion
+    shodan-query: 'http.title:"Easy Diffusion"'
+  tags: panel,easydiffusion,stable-diffusion,ai,image-generation,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Easy Diffusion"
+
+      - type: status
+        status:
+          - 200
