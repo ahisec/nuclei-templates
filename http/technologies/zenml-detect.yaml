@@ -5,11 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    ZenML Dashboard was detected. ZenML is an open-source MLOps framework for
-    building and managing portable, reproducible ML pipelines. The self-hosted
-    dashboard provides access to pipeline runs, artifact stores, model registries,
-    and connected cloud infrastructure. Exposed instances may allow unauthenticated
-    access to ML pipeline data and infrastructure credentials.
+    ZenML Dashboard was detected. ZenML is an open-source MLOps framework for building and managing portable, reproducible ML pipelines. The self-hosted dashboard provides access to pipeline runs, artifact stores, model registries, and connected cloud infrastructure.
   reference:
     - https://github.com/zenml-io/zenml
     - https://zenml.io/
