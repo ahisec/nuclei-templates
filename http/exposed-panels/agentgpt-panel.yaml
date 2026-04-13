@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    AgentGPT was detected. AgentGPT is a browser-based autonomous AI agent platform
-    that allows users to create, configure and deploy AI agents directly in the browser.
-    Self-hosted instances expose the agent configuration interface.
+   AgentGPT was detected. AgentGPT was a browser-based autonomous AI agent platform that allows users to create, configure and deploy AI agents directly in the browser.
   reference:
     - https://github.com/reworkd/AgentGPT
     - https://agentgpt.reworkd.ai/
