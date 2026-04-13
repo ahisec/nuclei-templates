@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    Activepieces was detected. Activepieces is an open-source automation platform
-    with AI and LLM integrations. Exposed instances may allow access to workflow
-    automation configurations and connected integrations.
+   Activepieces was detected. Activepieces was an open-source automation platform with AI and LLM integrations. Exposed instances may allow access to workflow automation configurations and connected integrations.
   reference:
     - https://github.com/activepieces/activepieces
     - https://www.activepieces.com/
