@@ -1,0 +1,35 @@
+id: freescout-installer
+
+info:
+  name: FreeScout Installer Exposure
+  author: DhiyaneshDk
+  severity: high
+  description: |
+    FreeScout is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:freescout:freescout:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: freescout
+    product: freescout
+    shodan-query: http.title:"FreeScout Installer"
+  tags: misconfig,exposure,install,freescout,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/install"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "FreeScout Installer"
+          - "Easy Installation and Setup Wizard"
+        condition: and
+
+      - type: status
+        status:
+          - 200
