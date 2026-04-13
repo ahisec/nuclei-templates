@@ -5,11 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    H2O Wave was detected. H2O Wave is an open-source Python development framework
-    for building real-time interactive AI and ML web applications. The Wave server
-    hosts applications built on the platform. Exposed instances may allow
-    unauthenticated access to ML dashboards, data visualisations, and AI
-    applications running on the platform.
+    H2O Wave was detected. H2O Wave was an open-source Python development framework for building real-time interactive AI and ML web applications. The Wave server hosted applications built on the platform.
   reference:
     - https://github.com/h2oai/wave
     - https://wave.h2o.ai/
