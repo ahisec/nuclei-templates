@@ -1,0 +1,35 @@
+id: astrbot-panel-detect
+
+info:
+  name: AstrBot WebUI Login Panel - Detect
+  author: theamanrawat
+  severity: info
+  description: |
+    Astrbot WebUI login panel was detected.
+  reference:
+    - https://github.com/AstrBotDevs/AstrBot
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query:
+      - http.title:"AstrBot"
+      - http.title:"AstrBot"
+    fofa-query: title="AstrBot"
+    google-query: intitle:"AstrBot"
+  tags: panel,astrbot,login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>AstrBot"
+
+      - type: status
+        status:
+          - 200
