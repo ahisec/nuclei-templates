@@ -69,6 +69,7 @@ http/misconfiguration/glitchtip/glitchtip-public-signup.yaml
 http/misconfiguration/heimdall-dashboard-exposure.yaml
 http/misconfiguration/installer/3cx-installer.yaml
 http/misconfiguration/installer/azuracast-installer.yaml
+http/misconfiguration/installer/freescout-installer.yaml
 http/misconfiguration/installer/icinga-installer.yaml
 http/misconfiguration/installer/leantime-install-page-exposed.yaml
 http/misconfiguration/installer/modx-installer.yaml
