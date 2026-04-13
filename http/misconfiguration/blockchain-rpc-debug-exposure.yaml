@@ -2,7 +2,7 @@ id: blockchain-rpc-debug-exposure
 
 info:
   name: Blockchain RPC Debug Trace Methods - Exposure
-  author: PentesterTN
+  author: 0xBassia
   severity: medium
   description: |
     The blockchain RPC endpoint has debug-level tracing methods enabled (debug_traceTransaction, debug_traceBlockByNumber, trace_block, trace_filter). These methods return complete EVM execution traces including opcodes, stack values, and memory contents, enabling smart contract reverse engineering and targeted attacks.
