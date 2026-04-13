@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    Flowise panel was detected. Flowise is an open-source drag-and-drop LLM flow builder
-    and AI agent platform. Exposed instances may reveal AI workflow configurations,
-    API keys, and connected data sources.
+    Flowise panel was detected. Flowise is an open-source drag-and-drop LLM flow builderand AI agent platform. Exposed instances may reveal AI workflow configurations, API keys, and connected data sources.
   reference:
     - https://github.com/FlowiseAI/Flowise
     - https://flowiseai.com/
