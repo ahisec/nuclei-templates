@@ -32,7 +32,7 @@ http:
       - type: dsl
         name: eol-version-detected
         dsl:
-          - "compare_versions(version, '<= 10.50.0')"
+          - "compare_versions(version, '<= 11.51.0')"
 
       - type: dsl
         dsl:
