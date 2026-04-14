@@ -5,10 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    Easy Diffusion (formerly Stable Diffusion UI) was detected. Easy Diffusion is
-    a one-click, self-hosted Stable Diffusion web application focused on
-    accessibility and ease of use for AI image generation. Exposed instances allow
-    unauthenticated access to image generation capabilities and stored outputs.
+   Easy Diffusion (formerly Stable Diffusion UI) was detected. Easy Diffusion is a one-click, self-hosted Stable Diffusion web application focused on accessibility and ease of use for AI image generation. Exposed instances allow unauthenticated access to image generation capabilities and stored outputs.
   reference:
     - https://github.com/easydiffusion/easydiffusion
     - https://easydiffusion.github.io/
@@ -33,7 +30,7 @@ http:
       - type: word
         part: body
         words:
-          - "Easy Diffusion"
+          - "<title>Easy Diffusion</title>"
 
       - type: status
         status:
