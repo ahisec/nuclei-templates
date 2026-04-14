@@ -2,7 +2,7 @@ id: showdoc-panel
 
 info:
   name: ShowDoc Panel Detection
-  author: Copilot
+  author: rxerium
   severity: info
   description: ShowDoc panel was detected. ShowDoc is a tool for documenting APIs and interfaces.
   classification:
@@ -11,12 +11,13 @@ info:
     max-request: 1
     vendor: showdoc
     product: showdoc
+    shodan-query: http.html:"showdoc"
   tags: panel,discovery,showdoc,tech
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}"
+      - "{{BaseURL}}/web/#/user/login"
 
     matchers-condition: and
     matchers:
