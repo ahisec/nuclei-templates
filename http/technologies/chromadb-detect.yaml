@@ -1,59 +1,47 @@
 id: chromadb-detect
 
 info:
-  name: ChromaDB Vector Database - Unauthenticated Instance Detected
+  name: ChromaDB Vector Database - Detect
   author: rxerium
   severity: info
   description: |
-    Detects a publicly exposed ChromaDB vector database using two reliable body-based
-    fingerprint traits confirmed across all deployment configurations:
+    Detected ChromaDB vector database instance publicly exposed. ChromaDB is an open-source AI-native vector database. Unauthenticated instances expose stored embeddings, collections, and metadata to unauthorized access.
   reference:
     - https://docs.trychroma.com/
-  tags: chromadb,vector-database,ai,exposure,fingerprint,detect
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: chroma-core
+    product: chromadb
+    shodan-query: 'http.html:"nanosecond heartbeat"'
+    fofa-query: 'body="nanosecond heartbeat"'
+  tags: chromadb,vector-database,ai,exposure,detect,discovery
 
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/api/v2"
+  - raw:
+      - |
+        GET /api/v1/heartbeat HTTP/1.1
+        Host: {{Hostname}}
+
+    host-redirects: true
+    max-redirects: 2
 
     matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
-
       - type: word
         part: body
         words:
           - "nanosecond heartbeat"
 
-    extractors:
-      - type: regex
-        name: heartbeat_ns
-        part: body
-        regex:
-          - '"nanosecond heartbeat":\\s*([0-9]+)'
-        internal: true
-
-  - method: GET
-    path:
-      - "{{BaseURL}}/api/v2/version"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: regex
-        part: body
-        regex:
-          - '^"[0-9]+\\.[0-9]+\\.[0-9]+"$'
+      - type: dsl
+        dsl:
+          - status_code == 200
+          - contains(content_type, "application/json")
+        condition: and
 
     extractors:
       - type: regex
         name: version
         part: body
         regex:
-          - '"([0-9]+\\.[0-9]+\\.[0-9]+)"'
-        group: 1
+          - '"nanosecond heartbeat":\s*([0-9]+)'
