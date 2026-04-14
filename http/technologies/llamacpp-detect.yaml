@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    Detected llama.cpp, a lightweight C/C++ inference engine for running GGUF-format
-    large language models locally. Exposed instances serve an OpenAI-compatible REST
-    API and a built-in web chat interface with no authentication by default.
+   Detected llama.cpp, a lightweight C/C++ inference engine for running GGUF-format large language models locally. Exposed instances serve an OpenAI-compatible REST API and a built-in web chat interface with no authentication by default.
   reference:
     - https://github.com/ggerganov/llama.cpp
   metadata:
@@ -16,12 +14,14 @@ info:
     vendor: ggerganov
     product: llama.cpp
     shodan-query: 'http.headers.server:"llama.cpp"'
+    fofa-query: 'server="llama.cpp"'
   tags: tech,llamacpp,llm,ai,detect,discovery
 
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/health"
+  - raw:
+      - |
+        GET /health HTTP/1.1
+        Host: {{Hostname}}
 
     host-redirects: true
     max-redirects: 2
@@ -29,15 +29,12 @@ http:
     matchers-condition: and
     matchers:
       - type: word
-        part: header
-        words:
-          - "llama.cpp"
-
-      - type: word
         part: body
         words:
           - '"status":"ok"'
 
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        dsl:
+          - contains(header, "llama.cpp")
+          - status_code == 200
+        condition: and
