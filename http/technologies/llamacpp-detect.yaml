@@ -38,3 +38,4 @@ http:
           - contains(header, "llama.cpp")
           - status_code == 200
         condition: and
+# digest: 4b0a00483046022100d251dc3ced29f03682258ba8083d111a0d5e886ac162f83854fe69d64befe28c022100f5140cddf8faab2f109a45eb486780680cc4d55b1f8e8543af1fcfc978e1195b:922c64590222798bb761d5b6d8e72950
