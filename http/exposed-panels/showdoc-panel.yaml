@@ -25,7 +25,6 @@ http:
         part: body
         words:
           - '<title>ShowDoc'
-        condition: and
 
       - type: status
         status:
