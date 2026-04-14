@@ -5,11 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    CVAT (Computer Vision Annotation Tool) was detected. CVAT is a widely used
-    open-source annotation platform for labelling images, video, and 3D point
-    clouds used to train AI/ML computer vision models. Exposed instances may allow
-    unauthenticated access to annotation projects, training datasets, and team
-    workflows.
+    CVAT (Computer Vision Annotation Tool) was detected. CVAT is a widely used open-source annotation platform for labelling images, video, and 3D point clouds used to train AI/ML computer vision models.
   reference:
     - https://github.com/cvat-ai/cvat
     - https://cvat.ai/
@@ -34,7 +30,7 @@ http:
       - type: word
         part: body
         words:
-          - "Computer Vision Annotation Tool"
+          - "<title>Computer Vision Annotation Tool</title>"
 
       - type: status
         status:
