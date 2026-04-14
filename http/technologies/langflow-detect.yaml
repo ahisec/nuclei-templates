@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    Langflow was detected. Langflow is an open-source visual LLM flow builder built on
-    LangChain, providing a drag-and-drop interface for building AI pipelines and agents.
-    Exposed instances may allow access to AI workflow configurations and API keys.
+   Langflow was detected. Langflow is an open-source visual LLM flow builder built on LangChain, providing a drag-and-drop interface for building AI pipelines and agents. Exposed instances may allow access to AI workflow configurations and API keys.
   reference:
     - https://github.com/langflow-ai/langflow
     - https://docs.langflow.org/
