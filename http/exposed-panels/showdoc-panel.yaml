@@ -1,0 +1,32 @@
+id: showdoc-panel
+
+info:
+  name: ShowDoc Panel Detection
+  author: rxerium
+  severity: info
+  description: |
+    ShowDoc panel was detected. ShowDoc was a tool for documenting APIs and interfaces.
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    vendor: showdoc
+    product: showdoc
+    shodan-query: http.html:"showdoc"
+  tags: panel,discovery,showdoc,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/web/#/user/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>ShowDoc</title>'
+
+      - type: status
+        status:
+          - 200
