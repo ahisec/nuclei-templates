@@ -2,24 +2,33 @@ id: fortisandbox-detect
 
 info:
   name: FortiSandbox Detection
-  author: nuclei
+  author: rxerium
   severity: info
-  description: Detects FortiSandbox login page
+  description: |
+    FortiSandbox is Fortinet's advanced sandbox solution for threat analysis and malware detection.
+    This template detects exposed FortiSandbox login and management interfaces.
   reference:
-    - https://www.fortinet.com/products/sandbox
+    - https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiSandbox.pdf
   metadata:
-    shodan-query: http.title:"FortiSandbox"
+    max-request: 1
     verified: true
+    vendor: fortinet
+    product: fortisandbox
+    shodan-query: http.title:"FortiSandbox"
+  tags: fortinet,fortisandbox,panel,login,sandbox,discovery
 
 http:
   - method: GET
     path:
-      - /ng/login?returnUrl=%2F
+      - "{{BaseURL}}/ng/login?returnUrl=%2F"
+
+    matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
           - '<title>FortiSandbox</title>'
-        part: body
+
       - type: status
         status:
           - 200
