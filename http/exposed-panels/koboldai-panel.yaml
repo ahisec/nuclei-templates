@@ -1,0 +1,37 @@
+id: koboldai-panel
+
+info:
+  name: KoboldAI Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+   KoboldAI was detected. KoboldAI was an AI text adventure and story generation interface that supports multiple local and remote language models including koboldcpp and AI Horde.
+  reference:
+    - https://github.com/LostRuins/koboldcpp
+    - https://github.com/KoboldAI/KoboldAI-Client
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: KoboldAI
+    product: koboldai
+    shodan-query: 'http.title:"KoboldAI Lite"'
+  tags: panel,koboldai,llm,ai,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>KoboldAI Lite</title>"
+
+      - type: status
+        status:
+          - 200

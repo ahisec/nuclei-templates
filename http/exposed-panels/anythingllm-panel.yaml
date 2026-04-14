@@ -1,0 +1,37 @@
+id: anythingllm-panel
+
+info:
+  name: AnythingLLM Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Detects the AnythingLLM web interface.
+  reference:
+    - https://github.com/Mintplex-Labs/anything-llm
+    - https://anythingllm.com/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: mintplex-labs
+    product: anything-llm
+    shodan-query: http.title:"AnythingLLM | Your personal LLM trained on anything"
+  tags: panel,anythingllm,detect,discovery,ai,llm
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "AnythingLLM | Your personal LLM trained on anything"
+
+      - type: status
+        status:
+          - 200
