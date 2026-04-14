@@ -5,9 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    An AUTOMATIC1111 Stable Diffusion WebUI instance was detected. SD WebUI is the most
-    popular open-source interface for Stable Diffusion image generation. Exposed instances
-    may allow unauthenticated access to image generation capabilities and model files.
+   Detected AUTOMATIC1111 Stable Diffusion WebUI instance. SD WebUI was the mostpopular open-source interface for Stable Diffusion image generation. Exposed instancesmay allow unauthenticated access to image generation capabilities and model files.
   reference:
     - https://github.com/AUTOMATIC1111/stable-diffusion-webui
   metadata:
@@ -19,20 +17,17 @@ info:
   tags: tech,stable-diffusion,sdwebui,ai,image-generation,detect,discovery
 
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
 
-    matchers-condition: and
     matchers:
-      - type: word
-        part: body
-        words:
-          - "hires_fix.js"
-
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        dsl:
+          - contains_all(body, "hires_fix.js", "AUTOMATIC1111", "gradio_config")
+          - status_code == 200
+        condition: and
