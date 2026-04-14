@@ -5,8 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |
-    KoboldAI was detected. KoboldAI is an AI text adventure and story generation interface
-    that supports multiple local and remote language models including koboldcpp and AI Horde.
+   KoboldAI was detected. KoboldAI was an AI text adventure and story generation interface that supports multiple local and remote language models including koboldcpp and AI Horde.
   reference:
     - https://github.com/LostRuins/koboldcpp
     - https://github.com/KoboldAI/KoboldAI-Client
@@ -31,7 +30,7 @@ http:
       - type: word
         part: body
         words:
-          - "KoboldAI Lite"
+          - "<title>KoboldAI Lite</title>"
 
       - type: status
         status:
