@@ -1,0 +1,25 @@
+id: fortisandbox-detect
+
+info:
+  name: FortiSandbox Detection
+  author: nuclei
+  severity: info
+  description: Detects FortiSandbox login page
+  reference:
+    - https://www.fortinet.com/products/sandbox
+  metadata:
+    shodan-query: http.title:"FortiSandbox"
+    verified: true
+
+http:
+  - method: GET
+    path:
+      - /ng/login?returnUrl=%2F
+    matchers:
+      - type: word
+        words:
+          - '<title>FortiSandbox</title>'
+        part: body
+      - type: status
+        status:
+          - 200
