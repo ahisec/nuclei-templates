@@ -1,0 +1,31 @@
+id: showdoc-panel
+
+info:
+  name: ShowDoc Panel Detection
+  author: Copilot
+  severity: info
+  description: ShowDoc panel was detected. ShowDoc is a tool for documenting APIs and interfaces.
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    vendor: showdoc
+    product: showdoc
+  tags: panel,discovery,showdoc,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>ShowDoc'
+        condition: and
+
+      - type: status
+        status:
+          - 200
