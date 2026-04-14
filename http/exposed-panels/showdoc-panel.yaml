@@ -4,7 +4,8 @@ info:
   name: ShowDoc Panel Detection
   author: rxerium
   severity: info
-  description: ShowDoc panel was detected. ShowDoc is a tool for documenting APIs and interfaces.
+  description: |
+    ShowDoc panel was detected. ShowDoc was a tool for documenting APIs and interfaces.
   classification:
     cwe-id: CWE-200
   metadata:
@@ -24,7 +25,7 @@ http:
       - type: word
         part: body
         words:
-          - '<title>ShowDoc'
+          - '<title>ShowDoc</title>'
 
       - type: status
         status:
