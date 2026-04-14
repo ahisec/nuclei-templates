@@ -1,0 +1,35 @@
+id: office-macros-not-restricted
+
+info:
+  name: Microsoft Office Macros Not Restricted
+  author: boonchuan
+  severity: high
+  description: Detects if Microsoft Office macro settings are not configured to block or restrict macro execution, increasing risk of macro-based malware delivery.
+  impact: |
+    Unrestricted macros allow attackers to deliver malware through Office documents, a common initial access vector.
+  remediation: |
+    Configure Group Policy to disable macros: User Configuration > Administrative Templates > Microsoft Office > Security > VBA Macro Notification Settings > Disable all without notification (VBAWarnings = 4).
+  reference:
+    - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
+    - https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked
+  tags: windows,office,macros,compliance,essential-eight,code,windows-audit
+
+self-contained: true
+
+code:
+  - pre-condition: |
+      IsWindows();
+    engine:
+      - powershell
+      - powershell.exe
+    args:
+      - -ExecutionPolicy
+      - Bypass
+    pattern: "*.ps1"
+    source: |
+      $apps = @('Word','Excel','PowerPoint'); $unrestricted = $false; foreach ($app in $apps) { $val = (Get-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Office\16.0\$app\Security" -Name 'VBAWarnings' -ErrorAction SilentlyContinue).VBAWarnings; if ($null -eq $val -or $val -lt 3) { $unrestricted = $true } }; if ($unrestricted) { 'True' } else { 'False' }
+
+    matchers:
+      - type: word
+        words:
+          - "True"
