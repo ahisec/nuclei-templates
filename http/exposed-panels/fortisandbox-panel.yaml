@@ -1,7 +1,7 @@
-id: fortisandbox-detect
+id: fortisandbox-panel-detect
 
 info:
-  name: FortiSandbox Detection
+  name: FortiSandbox Panel - Detect
   author: rxerium
   severity: info
   description: |
