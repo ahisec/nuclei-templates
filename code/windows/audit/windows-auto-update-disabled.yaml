@@ -4,7 +4,8 @@ info:
   name: Windows Automatic Updates Disabled
   author: boonchuan
   severity: high
-  description: Detects if Windows automatic updates are explicitly disabled, leaving the system vulnerable to unpatched security flaws.
+  description: |
+    Detected Windows automatic updates were found disabled, leaving the system vulnerable to unpatched security flaws.
   impact: |
     Systems without automatic updates will miss critical security patches, increasing exposure to known vulnerabilities and exploits.
   remediation: |
@@ -12,9 +13,9 @@ info:
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/windows/deployment/update/waas-wu-settings
+  metadata:
+    verified: false
   tags: windows,updates,patching,compliance,essential-eight,code,windows-audit
-
-self-contained: true
 
 code:
   - pre-condition: |
@@ -28,7 +29,6 @@ code:
     pattern: "*.ps1"
     source: |
       $au = Get-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' -ErrorAction SilentlyContinue; if ($au -and $au.NoAutoUpdate -eq 1) { 'True' } else { 'False' }
-
     matchers:
       - type: word
         words:
