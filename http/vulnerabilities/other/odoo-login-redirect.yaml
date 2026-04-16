@@ -1,7 +1,7 @@
 id: odoo-login-redirect
 
 info:
-  name: Reflected Odoo Open Redirect / XSS
+  name: Reflected Odoo - Open Redirect
   author: DhiyaneshDk
   severity: low
   description: |
@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.component:"Odoo" html:"web/login"
-  tags: redirect,odoo
+  tags: redirect,odoo,vuln
 
 http:
   - method: GET
