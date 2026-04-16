@@ -1,0 +1,24 @@
+id: nginx-opencloudos-test-page
+
+info:
+  name: Nginx Test Page for OpenCloudOS
+  author: pussycat0x
+  severity: info
+  description: |
+    OpenCloudOS test page was discovered.
+  metadata:
+    verified: true
+    shodan-query: http.title:"OpenCloudOS"
+  tags: tech,nginx,opencloudos
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "<title>Nginx test page for OpenCloudOS</title>")'
+        condition: and
