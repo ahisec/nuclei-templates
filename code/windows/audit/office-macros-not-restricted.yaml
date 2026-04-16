@@ -4,7 +4,8 @@ info:
   name: Microsoft Office Macros Not Restricted
   author: boonchuan
   severity: high
-  description: Detects if Microsoft Office macro settings are not configured to block or restrict macro execution, increasing risk of macro-based malware delivery.
+  description: |
+    Detected Microsoft Office macro restrictions were not configured, increasing the risk of macro-based malware delivery through Office documents.
   impact: |
     Unrestricted macros allow attackers to deliver malware through Office documents, a common initial access vector.
   remediation: |
@@ -12,9 +13,9 @@ info:
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked
+  metadata:
+    verified: false
   tags: windows,office,macros,compliance,essential-eight,code,windows-audit
-
-self-contained: true
 
 code:
   - pre-condition: |
@@ -28,7 +29,6 @@ code:
     pattern: "*.ps1"
     source: |
       $apps = @('Word','Excel','PowerPoint'); $unrestricted = $false; foreach ($app in $apps) { $val = (Get-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Office\16.0\$app\Security" -Name 'VBAWarnings' -ErrorAction SilentlyContinue).VBAWarnings; if ($null -eq $val -or $val -lt 3) { $unrestricted = $true } }; if ($unrestricted) { 'True' } else { 'False' }
-
     matchers:
       - type: word
         words:
