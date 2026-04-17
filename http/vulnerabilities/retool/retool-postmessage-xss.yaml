@@ -35,7 +35,7 @@ http:
         name: js-bundle
         part: body
         regex:
-          - 'custom-component-collections\.[A-Za-z0-9_]+\.umd\.js'
+          - 'custom\-component\-collections([.A-Za-z_]+)'
         internal: true
 
   - method: GET
