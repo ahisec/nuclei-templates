@@ -41,5 +41,5 @@ http:
       - type: regex
         part: body
         regex:
-          - '(?is)data-page\s*=\s*"[^"]*\\"component\\"[^"]*\\"props\\"[^"]*\\"url\\"'
+          - "(?is)data-page\\s*=\\s*\"(?:[^\"\\\\]|\\\\.)*\\\\\"component\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"props\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"url\\\\\""
 
