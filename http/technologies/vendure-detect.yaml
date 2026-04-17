@@ -1,0 +1,43 @@
+id: vendure-detect
+
+info:
+  name: Vendure - Detect
+  author: theamanrawat
+  severity: info
+  description: |
+    Vendure headless commerce platform was detected via the presence of the vendure-auth-token response header on the Shop API endpoint.
+  reference:
+    - https://github.com/vendure-ecommerce/vendure
+    - https://docs.vendure.io/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: http.header:"vendure-auth-token"
+    fofa-query: header="vendure-auth-token"
+    google-query: inurl:"/shop-api"
+  tags: tech,vendure,detect
+
+http:
+  - raw:
+      - |
+        POST /shop-api HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"query":"{ __typename }"}
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "vendure-auth-token"
+
+      - type: word
+        part: body
+        words:
+          - '"data"'
+
+      - type: status
+        status:
+          - 200
