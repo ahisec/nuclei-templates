@@ -1,0 +1,46 @@
+id: chainlit-unauth-access
+
+info:
+  name: Chainlit - Unauthenticated Access
+  author: pussycat0x
+  severity: low
+  description: |
+    Detects Chainlit AI chatbot instances with no authentication, leaving the entire app publicly accessible by default.
+  reference:
+    - https://github.com/chainlit/chainlit
+    - https://docs.chainlit.io/authentication/overview
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: title:"Chainlit"
+  tags: chainlit,unauth,misconfig,ai,llm,exposure
+
+flow: http(1) && http(2)
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Accept: application/json
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - "contains(body, 'Chainlit/chainlit')"
+        condition: and
+        internal: true
+
+  - raw:
+      - |
+        GET /project/settings HTTP/1.1
+        Host: {{Hostname}}
+        Accept: application/json
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - "contains_all(body, 'userEnv','ui','mcp')"
+        condition: and
