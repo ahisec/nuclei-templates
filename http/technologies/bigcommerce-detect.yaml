@@ -54,4 +54,4 @@ http:
           - 'bigcommerce-site-id=([a-z0-9]+)'
           - 'bc-site-id="([a-zA-Z0-9]+)"'
           - 'bigcommerce\.com/([^/]+)'
-# digest: 4a0a00473045022100eb2e97657c0faabbe735f1928dcaef783025c5e1eaed7590ae596b49fc9a64e602207d5b9332ddb29139365d727cf1378f480f074dca1093ef9aabe6dbeeb3e0e2de:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220491d23e55e27547ced17e5a73d69f1a7058dc9dade88dee34474b3d5dffb38c0022100f039f80573ba0fee31b871da19d6a56c9b076a4af0b087e0b56e3184f3bdf9ca:922c64590222798bb761d5b6d8e72950
