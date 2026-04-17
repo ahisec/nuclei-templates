@@ -15,5 +15,6 @@ http/misconfiguration/chainlit-unauth-access.yaml
 http/misconfiguration/installer/chromadb-installer.yaml
 http/technologies/browserless-swagger-detect.yaml
 http/technologies/nginx-opencloudos-test-page.yaml
+http/technologies/vendure-detect.yaml
 http/vulnerabilities/other/odoo-login-redirect.yaml
 javascript/cves/2026/CVE-2026-39363.yaml
