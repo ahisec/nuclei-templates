@@ -11,6 +11,7 @@ http/cves/2026/CVE-2026-33439.yaml
 http/cves/2026/CVE-2026-40242.yaml
 http/cves/2026/CVE-2026-40887.yaml
 http/cves/2026/CVE-2026-4631.yaml
+http/exposed-panels/fortisandbox-panel.yaml
 http/exposures/apis/chroma-api-exposure.yaml
 http/misconfiguration/chainlit-unauth-access.yaml
 http/misconfiguration/installer/chatwoot-installer.yaml
