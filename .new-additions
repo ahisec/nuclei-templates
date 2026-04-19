@@ -13,6 +13,7 @@ http/cves/2026/CVE-2026-40887.yaml
 http/cves/2026/CVE-2026-4631.yaml
 http/exposures/apis/chroma-api-exposure.yaml
 http/misconfiguration/chainlit-unauth-access.yaml
+http/misconfiguration/installer/chatwoot-installer.yaml
 http/misconfiguration/installer/chromadb-installer.yaml
 http/technologies/browserless-swagger-detect.yaml
 http/technologies/nginx-opencloudos-test-page.yaml
