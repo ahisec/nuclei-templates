@@ -960,8 +960,8 @@ code/windows/enumeration/rdp-ntlm-info.yaml:a4e4ee99b93ce4d060d0e525bf8a4d6c6f15
 code/windows/enumeration/unquoted-service-paths.yaml:2663d300b15940f45ad54d0e731821fba65d8bd4
 code/windows/get-stored-credentials-cmdkey.yaml:0355b4ae1b0a1fdac60cea737538510bdebe6382
 contributors.json:362462fcd69214ad2fc765d007d8ac58dfe38344
-cves.json:562866881141cab8d6f783250ec4033e1cc99bce
-cves.json-checksum.txt:31bcba4fd6b7f28784e7b1b9efb4ff73e875f7a3
+cves.json:ec195921afa3da017891bd0c746dc9907e60d071
+cves.json-checksum.txt:8447f82efada22197137f139365e06fe19355c61
 dast/ai/ai-code-execution.yaml:22499b9349751bc0841e3c87a9ad36f17d98c565
 dast/ai/ai-data-exfiltration.yaml:7c3b8514ff64b5ba6737ee77bf3c71a074e9540c
 dast/ai/ai-prompt-injection.yaml:509eeec9e6458911087a2f93e2358a4b5e285429
@@ -5898,7 +5898,7 @@ http/cves/2025/CVE-2025-68613.yaml:42675075e2e94b76fda2b10df1d0a0b5cd5bb016
 http/cves/2025/CVE-2025-68645.yaml:8482c30d250a08cf9e5e4b1aac85e1a591f80c60
 http/cves/2025/CVE-2025-69200.yaml:19eaa47c6a83b899793c433311f52343ca25c489
 http/cves/2025/CVE-2025-6934.yaml:067c74ef67a35750b4269e1edb9051dd70e68af2
-http/cves/2025/CVE-2025-69411.yaml:6e37c846becd3ffac85491b4f0c64e7752c1538c
+http/cves/2025/CVE-2025-69411.yaml:6fdca422a1926c6af1d725d36ae1fc83045a8054
 http/cves/2025/CVE-2025-6970.yaml:7d04e5113c4aeedb440506a88a5c57797eeccaf4
 http/cves/2025/CVE-2025-69971.yaml:dc45378d6225a27a419589860b0fca61e4835bd5
 http/cves/2025/CVE-2025-71243.yaml:3b4bc04bf59eeab2d982d68803ae0917ef0020e6
@@ -8773,6 +8773,7 @@ http/misconfiguration/installer/blesta-installer.yaml:afe779d073d123320236a78fac
 http/misconfiguration/installer/businesso-installer.yaml:d0cedadbeb22e5a466cd44f009c125881243fb78
 http/misconfiguration/installer/call-com-installer.yaml:a47a62768650fc31ee5ce1d32dfebf3d33032c22
 http/misconfiguration/installer/chamilo-installer.yaml:e495b874690d63ce2ab9f8ddfd4b224bd8779a21
+http/misconfiguration/installer/chatwoot-installer.yaml:891a9435940f7c42cb6b07db02691ae493869834
 http/misconfiguration/installer/chromadb-installer.yaml:88471f413c25f5c4d6c35ddded486cd50e7ff6e1
 http/misconfiguration/installer/churchcrm-installer.yaml:43edf16687652faccfa7b53857916b5670f020f0
 http/misconfiguration/installer/circarlife-setup.yaml:7eab1245a5de96099047ada15c56eb47201cc356
@@ -13106,7 +13107,7 @@ ssl/tls-version.yaml:396e167fe4dc47cc31a3823287f767ac4ba3ed6d
 ssl/untrusted-root-certificate.yaml:bc78917f6ed97df44ec66fd168e6d3d51f2050a9
 ssl/weak-cipher-suites.yaml:a2c5b71896965bcbb458e1d2a5bcf54981301156
 ssl/wildcard-tls.yaml:93487bb9d9c28bf84ae1928887b0dafef67b4117
-templates-checksum.txt:5d1903201e7d179d1d24853d9730b0ebd3a648c1
+templates-checksum.txt:f9e8a62243ccea4de7db17d704b9ee4fed7e8aef
 workflows/74cms-workflow.yaml:bb010e767ad32b906153e36ea618be545b4e22d0
 workflows/acrolinx-workflow.yaml:8434089bb55dec3d7b2ebc6a6f340e73382dd0c4
 workflows/activemq-workflow.yaml:20eb2f6dea0ca25d1bd556b5a63e5f25686f2376
