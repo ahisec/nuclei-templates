@@ -27,6 +27,7 @@ http:
         part: body
         words:
           - '<title>FortiSandbox'
+          - '<span>FortiSandbox'
 
       - type: status
         status:
