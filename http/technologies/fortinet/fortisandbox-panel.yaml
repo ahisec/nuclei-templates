@@ -1,0 +1,44 @@
+id: fortisandbox-panel
+
+info:
+  name: Fortinet FortiSandbox Panel - Detect
+  author: Umut ÖZEN
+  severity: info
+  description: |
+    Detects the Fortinet FortiSandbox login panel. FortiSandbox is a threat defense solution
+    that uses dynamic analysis to identify malware.
+  reference:
+    - https://www.fortinet.com/products/sandbox/fortisandbox
+  classification:
+    cpe: cpe:2.3:a:fortinet:fortisandbox:*:*:*:*:*:*:*:*
+  metadata:
+    verified: false
+    max-request: 1
+    vendor: fortinet
+    product: fortisandbox
+    shodan-query:
+      - title:"FortiSandbox"
+  tags: panel,fortinet,fortisandbox,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/fsa/login"
+
+    stop-at-first-match: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>FortiSandbox</title>"
+          - "fsa_login_logo"
+          - "/images/fsa_logo"
+          - "FortiSandbox"
+        condition: and
+
+      - type: regex
+        part: header
+        regex:
+          - 'Set-Cookie: FSA_SESSION_ID='
