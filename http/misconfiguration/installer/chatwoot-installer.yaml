@@ -1,7 +1,7 @@
-id: chatwoot-installer-exposed
+id: chatwoot-installer
 
 info:
-  name: Chatwoot - Unfinished Installation
+  name: Chatwoot - Installation
   author: 0x_Akoko
   severity: high
   description: |
@@ -27,6 +27,5 @@ http:
       - type: dsl
         dsl:
           - 'contains_all(body, "SuperAdmin | Chatwoot", "Howdy, Welcome to Chatwoot", "Finish Setup")'
-          - 'contains(content_type, "text/html")'
           - 'status_code == 200'
         condition: and
