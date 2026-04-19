@@ -1,0 +1,46 @@
+id: prisma-schema-leak
+
+info:
+  name: Exposed Prisma Database Schema Leak
+  author: Umut ÖZEN
+  severity: high
+  description: Prisma is a modern ORM extremely popular in the Node.js and TypeScript (Next.js/Express) ecosystems. Developers often accidentally expose the `prisma/` folder in web directories during deployments or Docker builds. This template checks for the exposure of the `schema.prisma` file, which typically contains the complete internal database table definitions, architectures, and the database connection strings (URLs) pointing to AWS RDS, PostgreSQL, or SQLite databases.
+  tags: exposure,prisma,database,config,leak,custom
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/schema.prisma"
+      - "{{BaseURL}}/prisma/schema.prisma"
+      - "{{BaseURL}}/src/prisma/schema.prisma"
+      - "{{BaseURL}}/db/schema.prisma"
+      - "{{BaseURL}}/.prisma/schema.prisma"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'generator'
+          - 'datasource db'
+          - 'provider'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        name: db_provider
+        regex:
+          - 'provider\s*=\s*"([^"]+)"'
+
+      - type: regex
+        part: body
+        name: db_url
+        regex:
+          - 'url\s*=\s*(env\([^)]+\)|"[^"]+")'
+          - '(?i)postgre(sql|s)?:\/\/[^"\n]+'
+          - '(?i)mysql:\/\/[^"\n]+'
+          - '(?i)mongodb:\/\/[^"\n]+'
