@@ -20,9 +20,11 @@ http:
       - "{{BaseURL}}/db/schema.prisma"
       - "{{BaseURL}}/.prisma/schema.prisma"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
           - 'generator'
           - 'datasource '
