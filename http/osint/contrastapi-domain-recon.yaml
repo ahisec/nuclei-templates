@@ -5,9 +5,7 @@ info:
   author: UPinar
   severity: info
   description: |
-    Performs domain security reconnaissance using ContrastAPI. Retrieves WHOIS data,
-    DNS records, SSL certificate details, security headers, and threat intelligence
-    for the target domain.
+    Performs domain security reconnaissance using ContrastAPI. Retrieves WHOIS data, DNS records, SSL certificate details, security headers, and threat intelligence for the target domain.
   reference:
     - https://api.contrastcyber.com/docs
     - https://github.com/UPinar/contrastapi
@@ -22,20 +20,20 @@ variables:
 http:
   - method: GET
     path:
-      - "https://api.contrastcyber.com/v1/report/{{hostname}}"
+      - "https://api.contrastcyber.com/v1/domain/{{hostname}}"
 
     matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
-
       - type: word
         part: body
         words:
           - "domain"
           - "dns"
         condition: and
+
+      - type: status
+        status:
+          - 200
 
     extractors:
       - type: json
