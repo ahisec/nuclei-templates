@@ -138,3 +138,4 @@ http:
         name: secureDNS
         json:
           - '.secureDNS.delegationSigned // false'
+# digest: 4a0a004730450220787061b7c200cca80f91bab07e4a357af4868c42434bf0db5d6c8d8309f65dfb022100ef38f107e5c933ef1d727558f691764eb6a1b8bdacca866523a02a249c9e2622:922c64590222798bb761d5b6d8e72950
