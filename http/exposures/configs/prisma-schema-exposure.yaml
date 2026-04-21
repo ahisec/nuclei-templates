@@ -42,7 +42,7 @@ http:
         name: db_provider
         regex:
           - 'provider\s*=\s*"([^"]+)"'
-          
+
       - type: regex
         part: body
         name: db_url
