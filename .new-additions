@@ -15,6 +15,7 @@ http/cves/2026/CVE-2026-33439.yaml
 http/cves/2026/CVE-2026-40242.yaml
 http/cves/2026/CVE-2026-40887.yaml
 http/cves/2026/CVE-2026-4631.yaml
+http/cves/CVE-2026-2262.yaml
 http/default-logins/avaya-phone-default-login.yaml
 http/exposed-panels/fortisandbox-panel.yaml
 http/exposures/apis/chroma-api-exposure.yaml
