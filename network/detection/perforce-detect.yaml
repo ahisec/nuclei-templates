@@ -5,7 +5,7 @@ info:
   author: Morgan Robertson
   severity: info
   description: |
-    This template detects perforce servers. It works by emulating the binary handshake of a "./p4 info" command and looking for keywords in the response. 
+    This template detects perforce servers. It works by emulating the binary handshake of a "./p4 info" command and looking for keywords in the response.
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce
@@ -17,7 +17,7 @@ info:
   metadata:
     vendor: perforce
     product: P4 (FKA "Helix Core", FKA "Perforce")
-    fofa-query: \"add SSL protocol prefix to P4PORT\" && protocol=\"unknown\" # Only finds SSL enabled instances 
+    fofa-query: \"add SSL protocol prefix to P4PORT\" && protocol=\"unknown\" # Only finds SSL enabled instances
   tags: perforce,helixcore,scm,detection,p4d
 
 ### Hex Bytes Decoded
@@ -72,4 +72,3 @@ tcp:
           - "xfiles"
           - "server"
         condition: and
-
