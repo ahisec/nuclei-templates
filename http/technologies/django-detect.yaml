@@ -58,4 +58,4 @@ http:
         regex:
           - 'django-site-id=([a-z0-9]+)'
           - 'django\.org/([^/]+)'
-# digest: 4a0a004730450220230734bfd4b4fb6ae510dc2209b3d32aba6cd9de735cea735eaaff04bcaaea90022100abc581b912938379b279cf4a9caae58d2ff54bcdc43882d854efb6ef2baadb66:922c64590222798bb761d5b6d8e72950
+# digest: 480a00453043021f76e1df5febfe32ceaffcdbc5afe5c1deeb5df2ad33b65b9357db02628f4f3f022035310da47d183067d47fb911d3f7c3ba3c5cbb115a4cc554018efdcc30ea6143:922c64590222798bb761d5b6d8e72950
