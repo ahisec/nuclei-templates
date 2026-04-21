@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: osint,recon,domain,whois,dns,ssl,threat-intel
+  tags: misc,recon,domain,whois,dns,ssl,threat-intel
 
 variables:
   hostname: "{{Host}}"
