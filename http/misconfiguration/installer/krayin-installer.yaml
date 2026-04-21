@@ -1,0 +1,31 @@
+id: krayin-installer
+
+info:
+  name: Krayin CMS - Installer
+  author: theamanrawat
+  severity: high
+  description: |
+    Krayin CRM installer page was detected.
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: body="Krayin Installer"
+  tags: misconfig,exposure,krayin,crm,install
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/install'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Krayin Installer"
+          - "Welcome to Installation"
+        condition: and
+
+      - type: status
+        status:
+          - 200
