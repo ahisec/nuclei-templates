@@ -28,3 +28,4 @@ http:
           - "contains(header, 'attachment; filename=download_log.csv')"
           - "contains_all(body, 'Download ID', 'User Email', 'User IP')"
         condition: and
+# digest: 4a0a004730450221009300b23227fe0b855e14c36f8d638195d526ba71438dcdef8150cd8ffb4824030220061e01bb53ce3377cfe2ab9d3fa47ad3019134d83ce92855c8f45cfaadb186bc:922c64590222798bb761d5b6d8e72950
