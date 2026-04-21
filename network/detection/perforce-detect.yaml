@@ -18,7 +18,7 @@ info:
     vendor: perforce
     product: P4 (FKA "Helix Core", FKA "Perforce")
     fofa-query: \"add SSL protocol prefix to P4PORT\" && protocol=\"unknown\" # Only finds SSL enabled instances 
-  tags: perforce,helixcore,scm,detection
+  tags: perforce,helixcore,scm,detection,p4d
 
 ### Hex Bytes Decoded
 # Packet 1: Protocol Handshake
@@ -69,7 +69,7 @@ tcp:
         part: data
         encoding: hex
         words:
-          - "xfiles" # xfiles
-          - "server" # server
+          - "xfiles"
+          - "server"
         condition: and
 
