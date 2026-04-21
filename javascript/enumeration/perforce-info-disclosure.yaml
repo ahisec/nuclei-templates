@@ -29,6 +29,42 @@ info:
 
 flow: tcp(1) && javascript(1)
 
+### Hex Bytes Decoded
+# Packet 1: Protocol Handshake
+# ----------------------------
+# cmpfile       : ""
+# altSync       : ""
+# client        : "97"
+# api           : "99999"
+# enableStreams : ""
+# enableGraph   : ""
+# expandAndmaps : ""
+# chunking      : ""
+# host          : "localhost"
+# port          : "192.168.0.101:1666" # Ignored by server
+# sndbuf        : "1969919"
+# rcvbuf        : "98304"
+# autoTune      : "1"
+# func          : "protocol"
+
+# Packet 2: Command (user-info)
+# -----------------------------
+# version       : "2024.2/LINUX26X86_64/2697822"
+# autoLogin     : ""
+# prog          : "p4"
+# client        : "localhost"
+# cwd           : "/tmp"
+# host          : "localhost"
+# os            : "UNIX"
+# locale        : "C"
+# user          : "user"
+# unicode       : ""
+# charset       : "1"
+# utf8bom       : "1"
+# clientCase    : "0"
+# func          : "user-info"
+
+
 tcp:
   - host:
       - "{{Host}}:1666" # default port
