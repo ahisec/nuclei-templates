@@ -13,7 +13,6 @@ info:
   remediation: |
     Set run.users.authorize=1 to require authentication for user listing.
     Set dm.user.noautocreate=2 to prevent unauthenticated account creation.
-    Full hardening: p4 configure set security=4
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
