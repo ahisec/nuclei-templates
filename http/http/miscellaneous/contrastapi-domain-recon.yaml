@@ -64,14 +64,14 @@ http:
       - type: json
         name: mx_records
         json:
-          - '.dns.mx[]'
+          - '.dns.mx[].host'
 
       - type: json
-        name: tech_stack
+        name: waf_vendors
         json:
-          - '.technologies[].name'
+          - '.waf.detected[]'
 
       - type: json
-        name: threat_score
+        name: risk_score
         json:
-          - '.threat.risk_score'
+          - '.risk_score'
