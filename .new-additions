@@ -2,6 +2,7 @@ code/windows/audit/default-admin-account-enabled.yaml
 code/windows/audit/office-macros-not-restricted.yaml
 code/windows/audit/windows-auto-update-disabled.yaml
 http/cves/2021/CVE-2021-26947.yaml
+http/cves/2021/CVE-2021-45328.yaml
 http/cves/2025/CVE-2025-13390.yaml
 http/cves/2025/CVE-2025-23211.yaml
 http/cves/2025/CVE-2025-4524.yaml
