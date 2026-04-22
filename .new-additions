@@ -34,6 +34,7 @@ http/misconfiguration/apache/apache-skywalking-dashboard.yaml
 http/misconfiguration/chainlit-unauth-access.yaml
 http/misconfiguration/installer/chatwoot-installer.yaml
 http/misconfiguration/installer/chromadb-installer.yaml
+http/misconfiguration/installer/filestash-installer.yaml
 http/misconfiguration/installer/krayin-installer.yaml
 http/misconfiguration/wordpress/download-monitor-unauth-log-export.yaml
 http/technologies/browserless-swagger-detect.yaml
